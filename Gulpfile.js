@@ -6,7 +6,7 @@ var notify = require('gulp-notify');
 gulp.task('test', function() {
     gulp.src('spec/**/*.php')
         .pipe(run('clear'))
-        .pipe(phpspec('', { notify: true }))
+        .pipe(phpspec('./bin/phpspec run', { notify: true }))
         .on('error', notify.onError({
             title: "Failure",
             message: "You're in the red!"
